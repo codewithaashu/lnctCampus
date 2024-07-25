@@ -12,7 +12,7 @@ import {
 const TopBar = () => {
   return (
     <>
-      <div className="h-14 border-2 border-muted flex justify-end px-5 items-center rounded-sm">
+      <div className="h-14 border-[1px]  flex justify-end px-5 items-center rounded-sm shadow-md">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Avatar className="cursor-pointer h-9 w-9">

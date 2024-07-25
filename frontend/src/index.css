@@ -67,3 +67,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+.statsCard:hover {
+  .title {
+    color: #d1d5db;
+  }
+}
