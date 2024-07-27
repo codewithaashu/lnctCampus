@@ -15,8 +15,10 @@ const SideBar = () => {
         <div className="flex flex-col gap-[10px]">
           {superAdminMenus.map((curr, index) => (
             <Link
-              className={`flex gap-2 text-slate-500 text-[15px] cursor-pointer ${
-                path === curr.path ? "hover:text-white" : "hover:text-slate-700"
+              className={`flex gap-2 text-muted-foreground text-[15px] cursor-pointer ${
+                path === curr.path
+                  ? "hover:text-white"
+                  : "hover:text-card-foreground"
               } ${
                 path === curr.path && "bg-primary text-white"
               }  items-center p-2 rounded-md`}

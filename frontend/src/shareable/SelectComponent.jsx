@@ -9,11 +9,19 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const SelectComponent = ({ label, items, placeholder, triggerWidth }) => {
+const SelectComponent = ({
+  label,
+  items,
+  placeholder,
+  triggerWidth,
+  field,
+  form,
+  setForm,
+}) => {
   return (
-    <Select>
+    <Select onValueChange={(val) => setForm({ ...form, [field]: val })}>
       <SelectTrigger
-        className={`${triggerWidth} focus:ring-0 focus:ring-transparent h-fit py-1`}
+        className={`${triggerWidth} focus:ring-0 focus:ring-transparent py-1`}
       >
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
@@ -21,8 +29,8 @@ const SelectComponent = ({ label, items, placeholder, triggerWidth }) => {
         <SelectGroup>
           <SelectLabel>{label}</SelectLabel>
           {items.map((curr, index) => (
-            <SelectItem value={curr} key={index}>
-              {curr}
+            <SelectItem value={curr.value} key={index}>
+              {curr.title}
             </SelectItem>
           ))}
         </SelectGroup>

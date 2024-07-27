@@ -9,6 +9,7 @@ import Drives from "./pages/superadmin/Drives";
 import CreateDrive from "./pages/superadmin/CreateDrive";
 import TPOList from "./pages/superadmin/TPOList";
 import App from "./App";
+import { ThemeProvider } from "./components/theme-provider";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,8 @@ const router = createBrowserRouter([
 ]);
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </React.StrictMode>
 );

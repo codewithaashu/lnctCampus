@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ChartContainer,
   ChartTooltip,
@@ -27,9 +27,10 @@ const PlacedStudentStats = () => {
   const totalVisitors = React.useMemo(() => {
     return chartData.reduce((acc, curr) => acc + curr.students, 0);
   }, []);
+  const [form, setForm] = useState({ course: "" });
   return (
     <>
-      <Card className="pt-3 w-[320px] ">
+      <Card className="pt-3 w-[320px] shadow-md">
         <CardContent>
           <div className="flex justify-between items-center">
             <h1 className="font-semibold text-[16.5px]">Placed Students</h1>
@@ -37,7 +38,10 @@ const PlacedStudentStats = () => {
               placeholder={"Program"}
               label={"Program"}
               items={Programs}
-              triggerWidth={"w-[100px]"}
+              triggerWidth={"w-[100px] h-fit"}
+              field={"course"}
+              form={form}
+              setForm={setForm}
             />
           </div>
           <ChartContainer

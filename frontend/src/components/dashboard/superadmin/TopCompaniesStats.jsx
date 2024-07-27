@@ -19,11 +19,12 @@ const TopCompaniesStats = () => {
   const chartConfig = {
     students: {
       label: "Placed Students",
+      color: "hsl(var(--primary))",
     },
   };
   return (
     <>
-      <Card className="pt-3 w-[500px] h-[320px]">
+      <Card className="pt-3 w-[500px] h-[320px] shadow-md">
         <CardContent className="flex flex-col gap-5">
           <div className="flex flex-row justify-between items-center">
             <h3 className="text-lg font-semibold">Top Companies</h3>
@@ -52,7 +53,12 @@ const TopCompaniesStats = () => {
                 cursor={false}
                 content={<ChartTooltipContent hideLabel />}
               />
-              <Bar dataKey="students" fill="#2563EB" radius={8} barSize={40}>
+              <Bar
+                dataKey="students"
+                fill="var(--color-students)"
+                radius={8}
+                barSize={40}
+              >
                 <LabelList
                   position="top"
                   offset={12}
