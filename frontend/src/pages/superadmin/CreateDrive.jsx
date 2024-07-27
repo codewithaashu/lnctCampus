@@ -22,9 +22,10 @@ const CreateDrive = () => {
     batch: "",
     gap: "",
     cgpa: "",
-    courses: "",
+    courses: [],
     backlogs: "",
   });
+
   {
     /* Set the form according to their stage */
   }
@@ -75,7 +76,8 @@ const CreateDrive = () => {
             <PreviewForm
               setFormStage={setFormStage}
               formStage={formStage}
-              driveFormData={{ ...jobDetails, ...eligibilityDetails }}
+              jobDetails={jobDetails}
+              eligibilityDetails={eligibilityDetails}
             />
           </CardContent>
         </Card>

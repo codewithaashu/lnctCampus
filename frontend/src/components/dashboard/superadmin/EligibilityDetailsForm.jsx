@@ -82,6 +82,9 @@ const EligibilityDetailsForm = ({
           items={courses}
           emptyPlaceholder={"No course found."}
           placeholder={"Select course or courses"}
+          field={"courses"}
+          form={eligibilityDetails}
+          setForm={setEligibilityDetails}
         />
       </div>
       <div className="flex justify-between">

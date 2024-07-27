@@ -22,16 +22,23 @@ const MultipleSelectComponent = ({
   items,
   emptyPlaceholder,
   placeholder,
+  field,
+  form,
+  setForm,
 }) => {
   const [open, setOpen] = useState(false);
-  const [selectItem, setSelectItem] = useState([]);
   const removeItem = (value) => {
-    setSelectItem(selectItem.filter((c) => c.value !== value));
+    const updateField = form[field].filter((c) => c.value !== value);
+    setForm({ ...form, [field]: updateField });
   };
   const handleClick = (item) => {
-    selectItem.find((c) => c.value === item.value)
-      ? setSelectItem(selectItem.filter((c) => c.value !== item.value))
-      : setSelectItem([...selectItem, item]);
+    const data = form[field];
+    data.find((c) => c.value === item.value)
+      ? setForm({
+          ...form,
+          [field]: data.filter((c) => c.value !== item.value),
+        })
+      : setForm({ ...form, [field]: [...data, item] });
   };
   return (
     <div className="grid w-full gap-1.5 col-span-2">
@@ -44,22 +51,7 @@ const MultipleSelectComponent = ({
             aria-expanded={open}
             className="flex justify-between hover:bg-transparent h-fit"
           >
-            <p className="flex gap-2 w-11/12 flex-wrap">
-              {selectItem.length === 0
-                ? placeholder
-                : selectItem.map((item, index) => (
-                    <div
-                      key={index}
-                      className="p-1 rounded-full px-2 flex flex-row gap-3 items-center bg-muted text-[13px]"
-                    >
-                      <p>{item.label}</p>
-                      <X
-                        className="h-3 w-3 cursor-pointer"
-                        onClick={() => removeItem(item.value)}
-                      />
-                    </div>
-                  ))}
-            </p>
+            <p className="flex gap-2 w-11/12 flex-wrap">{placeholder}</p>
             <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>
@@ -81,7 +73,7 @@ const MultipleSelectComponent = ({
                     <Check
                       className={cn(
                         "mr-2 h-4 w-4",
-                        selectItem.find((c) => c.value === item.value)
+                        form[field].find((c) => c.value === item.value)
                           ? "opacity-100"
                           : "opacity-0"
                       )}
@@ -94,6 +86,21 @@ const MultipleSelectComponent = ({
           </Command>
         </PopoverContent>
       </Popover>
+      <div className="flex flex-row gap-3 flex-wrap">
+        {form[field].length > 0 &&
+          form[field].map((item, index) => (
+            <div
+              key={index}
+              className="p-1 rounded-full px-2 flex flex-row gap-2 items-center bg-muted text-[13px] w-fit"
+            >
+              <p>{item.label}</p>
+              <X
+                className="h-3 w-3 cursor-pointer"
+                onClick={() => removeItem(item.value)}
+              />
+            </div>
+          ))}
+      </div>
     </div>
   );
 };
