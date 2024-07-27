@@ -51,7 +51,9 @@ const MultipleSelectComponent = ({
             aria-expanded={open}
             className="flex justify-between hover:bg-transparent h-fit"
           >
-            <p className="flex gap-2 w-11/12 flex-wrap">{placeholder}</p>
+            <p className="flex gap-2 w-11/12 flex-wrap text-muted-foreground">
+              {placeholder}
+            </p>
             <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>

@@ -21,7 +21,7 @@ const SelectComponent = ({
   return (
     <Select onValueChange={(val) => setForm({ ...form, [field]: val })}>
       <SelectTrigger
-        className={`${triggerWidth} focus:ring-0 focus:ring-transparent py-1`}
+        className={`${triggerWidth} focus:ring-0 focus:ring-transparent py-1 `}
       >
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>

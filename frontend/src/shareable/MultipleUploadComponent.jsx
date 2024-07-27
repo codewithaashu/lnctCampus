@@ -1,5 +1,5 @@
 import { Label } from "@/components/ui/label";
-import { Trash2 } from "lucide-react";
+import { Trash2, Upload } from "lucide-react";
 import React from "react";
 
 const MultipleUploadComponent = ({
@@ -22,7 +22,8 @@ const MultipleUploadComponent = ({
           } items-center gap-1.5`}
         >
           <Label className="text-base px-1">{label}</Label>
-          <label className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background  text-muted-foreground cursor-pointer">
+          <label className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background items-center  text-muted-foreground cursor-pointer">
+            <Upload className="w-4 h-4 mr-2" />
             {placeholder}
             <input
               type="file"
