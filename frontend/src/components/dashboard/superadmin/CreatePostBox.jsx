@@ -54,16 +54,16 @@ const CreatePostBox = () => {
             setForm={setPostDetails}
           />
           <MultipleSelectComponent
-            label={"Courses"}
+            label={"Course(s)"}
             items={courses}
             emptyPlaceholder={"No course found."}
-            placeholder={"Select courses for which post has to be added"}
+            placeholder={"Select course(s) for which post has to be added"}
             field={"courses"}
             form={postDetails}
             setForm={setPostDetails}
           />
           <MultipleUploadComponent
-            label={"Upload Files"}
+            label={"Upload File(s)"}
             placeholder={"Upload related images or documents"}
             field={"files"}
             form={postDetails}

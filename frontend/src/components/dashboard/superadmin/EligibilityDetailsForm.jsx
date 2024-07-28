@@ -78,10 +78,10 @@ const EligibilityDetailsForm = ({
           setForm={setEligibilityDetails}
         />
         <MultipleSelectComponent
-          label={"Courses"}
+          label={"Course(s)"}
           items={courses}
           emptyPlaceholder={"No course found."}
-          placeholder={"Select course or courses"}
+          placeholder={"Select course(s)"}
           field={"courses"}
           form={eligibilityDetails}
           setForm={setEligibilityDetails}
