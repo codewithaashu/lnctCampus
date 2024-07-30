@@ -3,6 +3,7 @@ import { driveSortCriteria } from "@/db/sortBt";
 import SelectComponent from "@/shareable/SelectComponent";
 import React, { useState } from "react";
 import DriveCard from "./DriveCard";
+import SearchInput from "@/shareable/SearchInput";
 
 const DrivesBox = () => {
   const [form, setForm] = useState({ sortBy: "" });
@@ -37,6 +38,7 @@ const DrivesBox = () => {
           </div>
           {/* Drive Container */}
           <div className="grid grid-cols-3 gap-5 gap-y-8 pt-10">
+            <DriveCard />
             <DriveCard />
             <DriveCard />
             <DriveCard />

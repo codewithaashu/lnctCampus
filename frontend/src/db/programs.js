@@ -1,6 +1,6 @@
 export const Programs = [
-  { title: "All", value: "All" },
-  { title: "B.Tech", value: "B.Tech" },
-  { title: "MCA", value: "MCA" },
-  { title: "BCA", value: "BCA" },
+  { label: "All", value: "All" },
+  { label: "B.Tech", value: "B.Tech" },
+  { label: "MCA", value: "MCA" },
+  { label: "BCA", value: "BCA" },
 ];

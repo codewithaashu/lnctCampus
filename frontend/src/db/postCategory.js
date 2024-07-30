@@ -1,11 +1,11 @@
 export const postCategory = [
-  { title: "Mock Interview Updates", value: "Mock Interview Updates" },
-  { title: "Placed Student Updates", value: "Placed Student Updates" },
+  { label: "Mock Interview Updates", value: "Mock Interview Updates" },
+  { label: "Placed Student Updates", value: "Placed Student Updates" },
   {
-    title: "Certfication Course Updates",
+    label: "Certfication Course Updates",
     value: "Certfication Course Updates",
   },
-  { title: "Placement Updates", value: "Placement Updates" },
-  { title: "TNP Class Updates", value: "TNP Class Updates" },
-  { title: "Other Updates", value: "Other Updates" },
+  { label: "Placement Updates", value: "Placement Updates" },
+  { label: "TNP Class Updates", value: "TNP Class Updates" },
+  { label: "Other Updates", value: "Other Updates" },
 ];

@@ -8,10 +8,10 @@ import {
 } from "lucide-react";
 
 export const superAdminMenus = [
-  { icon: LayoutDashboard, title: "Dashboard", path: "/" },
-  { icon: CalendarDays, title: "Drives", path: "/drives" },
-  { icon: CalendarPlus, title: "Create Drive", path: "/create-drive" },
-  { icon: Mail, title: "Posts", path: "/posts" },
-  { icon: MailPlus, title: "Create Post", path: "/create-post" },
-  { icon: User, title: "TPO List", path: "/tpo" },
+  { icon: LayoutDashboard, label: "Dashboard", path: "/" },
+  { icon: CalendarDays, label: "Drives", path: "/drives" },
+  { icon: CalendarPlus, label: "Create Drive", path: "/create-drive" },
+  { icon: Mail, label: "Posts", path: "/posts" },
+  { icon: MailPlus, label: "Create Post", path: "/create-post" },
+  { icon: User, label: "TPO List", path: "/tpo" },
 ];

@@ -80,17 +80,6 @@ input[type="number"] {
   }
 }
 
-.ag-theme-quartz {
-  /* Changes the color of the grid text */
-  --ag-foreground-color: var(--card-foreground) !important;
-  --ag-border-color: rgba(158, 154, 154, 0.633) !important;
-  /* Changes the color of the grid background */
-  --ag-background-color: var(--background) !important;
-  /* Changes the header color of the top row */
-  --ag-header-background-color: var(--muted-foreground) !important;
-  /* Changes the hover color of the row*/
-  --ag-row-hover-color: var(--muted-foreground) !important;
-}
 @layer base {
   * {
     @apply border-border;

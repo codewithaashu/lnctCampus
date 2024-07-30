@@ -8,7 +8,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { useNavigate } from "react-router-dom";
 const DriveCard = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("/drives/student-register");
+  };
   return (
     <>
       <Card className="rounded-t-sm  border-t-[3px] border-t-primary">
@@ -69,7 +74,9 @@ const DriveCard = () => {
               <p className="text-[13.5px]  text-muted-foreground">20</p>
             </div>
           </div>
-          <Button className="mt-3 w-fit h-9 px-2 py-1">View Candidates</Button>
+          <Button className="mt-3 w-fit h-9 px-2 py-1" onClick={handleClick}>
+            View Candidates
+          </Button>
         </CardContent>
       </Card>
     </>

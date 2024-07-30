@@ -30,7 +30,7 @@ const SelectComponent = ({
           <SelectLabel>{label}</SelectLabel>
           {items.map((curr, index) => (
             <SelectItem value={curr.value} key={index}>
-              {curr.title}
+              {curr.label}
             </SelectItem>
           ))}
         </SelectGroup>

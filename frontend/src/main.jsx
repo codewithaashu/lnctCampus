@@ -10,6 +10,10 @@ import CreateDrive from "./pages/superadmin/CreateDrive";
 import TPOList from "./pages/superadmin/TPOList";
 import App from "./App";
 import { ThemeProvider } from "./components/theme-provider";
+import RegisteredStudents from "./components/dashboard/superadmin/RegisteredStudents";
+import DrivesBox from "./components/dashboard/superadmin/DrivesBox";
+import StudentDetails from "./components/dashboard/superadmin/StudentDetails";
+import { Toaster } from "sonner";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +35,20 @@ const router = createBrowserRouter([
       {
         path: "/drives",
         element: <Drives />,
+        children: [
+          {
+            path: "/drives",
+            element: <DrivesBox />,
+          },
+          {
+            path: "/drives/student-register",
+            element: <RegisteredStudents />,
+          },
+          {
+            path: "/drives/view-student",
+            element: <StudentDetails />,
+          },
+        ],
       },
       {
         path: "/create-drive",
@@ -47,6 +65,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
       <RouterProvider router={router} />
+      <Toaster />
     </ThemeProvider>
   </React.StrictMode>
 );

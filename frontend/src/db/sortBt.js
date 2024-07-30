@@ -1,7 +1,7 @@
 export const driveSortCriteria = [
-  { title: "Job Posted", value: "date" },
-  { title: "Deadline", value: "lastDateOfApplication" },
-  { title: "Drive Date", value: "driveDate" },
-  { title: "Active", value: "active" },
-  { title: "Closed", value: "closed" },
+  { label: "Job Posted", value: "date" },
+  { label: "Deadline", value: "lastDateOfApplication" },
+  { label: "Drive Date", value: "driveDate" },
+  { label: "Active", value: "active" },
+  { label: "Closed", value: "closed" },
 ];

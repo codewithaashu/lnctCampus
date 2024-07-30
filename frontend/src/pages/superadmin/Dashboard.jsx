@@ -13,7 +13,7 @@ const Dashboard = () => {
         {/* Stats Box */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
           {superAdminStats.map((curr, index) => (
-            <StatsCard title={curr.title} value={curr.value} key={index} />
+            <StatsCard title={curr.label} value={curr.value} key={index} />
           ))}
         </div>
         {/* Recent Placements and Upcoming Events */}

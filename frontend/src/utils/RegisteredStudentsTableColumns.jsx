@@ -1,13 +1,37 @@
-import React from "react";
-import { ArrowUpDown, MoreHorizontal } from "lucide-react";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+  ArrowDownIcon,
+  ArrowUpIcon,
+  ChevronsLeftRightIcon,
+  FileDown,
+} from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
+import RegisterStudentTableActions from "../components/dashboard/superadmin/RegisterStudentTableActions";
+
+const getStatusColor = (value) => {
+  if (value === "Shortlisted") {
+    return "bg-indigo-100 text-indigo-600";
+  } else if (value === "Next Round") {
+    return "bg-yellow-100 text-yellow-600";
+  } else if (value === "Pending") {
+    return "bg-orange-100 text-orange-600";
+  } else if (value === "Hired") {
+    return "bg-green-100 text-green-600";
+  }
+  return "bg-red-100 text-red-600";
+};
+
+const renderSortIcon = (column) => {
+  const sort = column.getIsSorted();
+  if (!sort) {
+    return <ChevronsLeftRightIcon className="ml-2 h-4 w-4 rotate-90" />;
+  }
+  return sort === "desc" ? (
+    <ArrowDownIcon className="ml-2 h-4 w-4" />
+  ) : (
+    <ArrowUpIcon className="ml-2 h-4 w-4" />
+  );
+};
 
 const HeaderWithSortBtn = ({ title, column }) => {
   return (
@@ -16,7 +40,7 @@ const HeaderWithSortBtn = ({ title, column }) => {
       onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
     >
       {title}
-      <ArrowUpDown className="ml-2 h-4 w-4" />
+      {renderSortIcon(column)}
     </Button>
   );
 };
@@ -51,6 +75,7 @@ const RegisteredStudentsTableColumns = [
     cell: ({ row }) => (
       <div className="uppercase ">{row.getValue("enrollNo")}</div>
     ),
+    enableHiding: false,
   },
   {
     accessorKey: "name",
@@ -60,6 +85,7 @@ const RegisteredStudentsTableColumns = [
     cell: ({ row }) => (
       <div className="capitalize ">{row.getValue("name")}</div>
     ),
+    enableHiding: false,
   },
   {
     accessorKey: "email",
@@ -90,35 +116,45 @@ const RegisteredStudentsTableColumns = [
     cell: ({ row }) => <div className="">{row.getValue("department")}</div>,
   },
   {
+    accessorKey: "cgpa",
+    header: ({ column }) => (
+      <HeaderWithSortBtn title={"CGPA"} column={column} />
+    ),
+    cell: ({ row }) => <div className="">{row.getValue("cgpa")}</div>,
+  },
+  {
     accessorKey: "status",
     header: ({ column }) => (
       <HeaderWithSortBtn title={"Status"} column={column} />
     ),
-    cell: ({ row }) => <div className="">{row.getValue("status")}</div>,
+    cell: ({ row }) => (
+      <div
+        className={`${getStatusColor(
+          row.getValue("status")
+        )} font-medium rounded-full`}
+      >
+        {row.getValue("status")}
+      </div>
+    ),
+    enableHiding: false,
+  },
+  {
+    accessorKey: "resume",
+    header: ({ column }) => <div className="text-sm font-medium">Resume</div>,
+    cell: ({ row }) => (
+      <a href={row.getValue("resume")} target="_blank">
+        <Button className="bg-muted text-primary border-primary border-[1px] text-sm h-fit hover:bg-transparent">
+          <FileDown className="w-4 h-4" /> <span className="px-1">CV</span>
+        </Button>
+      </a>
+    ),
+    enableSorting: false,
   },
   {
     id: "actions",
     enableHiding: false,
-    cell: ({ row }) => {
-      const payment = row.original;
-
-      return (
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="ghost" className="h-8 w-8 p-0">
-              <span className="sr-only">Open menu</span>
-              <MoreHorizontal className="h-4 w-4" />
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuItem>View Details</DropdownMenuItem>
-            <DropdownMenuItem>Change Status</DropdownMenuItem>
-            <DropdownMenuItem>Hired</DropdownMenuItem>
-            <DropdownMenuItem>Remove</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
-      );
-    },
+    cell: ({ row }) => <RegisterStudentTableActions row={row.original} />,
+    size: 50,
   },
 ];
 

@@ -1,15 +1,15 @@
 export const superAdminStats = [
-  { title: "Total Drives", value: 90 },
+  { label: "Total Drives", value: 90 },
   {
-    title: "Completed Drives",
+    label: "Completed Drives",
     value: 57,
   },
   {
-    title: "Pending Drives",
+    label: "Pending Drives",
     value: 18,
   },
   {
-    title: "Upcoming Drives",
+    label: "Upcoming Drives",
     value: 15,
   },
 ];

@@ -13,7 +13,7 @@ const SearchInput = ({ placeholder, className, value, setValue }) => {
       >
         <Search className="w-4 h-4 text-muted-foreground" />
         <input
-          className="text-sm w-full outline-none bg-background"
+          className="text-sm w-full outline-none bg-background text-muted-foreground"
           type="text"
           placeholder={placeholder}
           value={value}
