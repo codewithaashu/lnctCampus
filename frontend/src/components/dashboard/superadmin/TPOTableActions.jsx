@@ -9,10 +9,12 @@ import AlertDialogComponent from "@/shareable/AlertDialogComponent";
 import { MoreHorizontal } from "lucide-react";
 import React, { useState } from "react";
 import TPOAddDialog from "./TPOAddDialog";
+import ViewTPODetails from "./ViewTPODetails";
 
 const TPOTableActions = ({ row }) => {
   const [openRemoveDialog, setOpenRemoveDialog] = useState(false);
   const [openEditDialog, setOpenEditDialog] = useState(false);
+  const [viewDetails, setViewDetails] = useState(false);
   const removeStudent = () => {
     console.log(row);
     setOpenRemoveDialog(false);
@@ -64,6 +66,7 @@ const TPOTableActions = ({ row }) => {
           department: "",
         }}
       />
+      <ViewTPODetails setOpen={setViewDetails} open={viewDetails} />
     </DropdownMenu>
   );
 };

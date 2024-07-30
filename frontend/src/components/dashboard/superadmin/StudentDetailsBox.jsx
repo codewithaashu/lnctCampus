@@ -1,8 +1,6 @@
 import React from "react";
 import StudentDetailsBoxHeader from "./StudentDetailsBoxHeader";
 import { studentDetails } from "@/db/studentDetails";
-import { Button } from "@/components/ui/button";
-import { FileDown } from "lucide-react";
 
 const StudentDetailsBox = () => {
   return (

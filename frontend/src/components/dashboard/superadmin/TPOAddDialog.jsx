@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/dialog";
 import InputComponent from "@/shareable/InputComponent";
 import DateComponent from "@/shareable/DateComponent";
-import TextAreaComponent from "@/shareable/TextAreaComponent";
 import SelectLabelComponent from "@/shareable/SelectLabelComponent";
 import { courses } from "@/db/courses";
 import ImageUploadComponent from "@/shareable/ImageUploadComponent";
@@ -22,7 +21,7 @@ const TPOAddDialog = ({ open, setOpen, editable = false, form }) => {
   };
   return (
     <Dialog open={open}>
-      <DialogContent className="w-[425px] md:w-[720px]">
+      <DialogContent className="w-[425px] md:w-[720px] overflow-y-auto max-h-svh max-w-full">
         <DialogHeader>
           <DialogTitle>{editable ? "Edit TPO" : "Add TPO"}</DialogTitle>
         </DialogHeader>
@@ -81,14 +80,14 @@ const TPOAddDialog = ({ open, setOpen, editable = false, form }) => {
             type={"tel"}
             setForm={setTPOForm}
           />
-          <TextAreaComponent
+          <InputComponent
             field={"currentAddress"}
             form={TPOForm}
             setForm={setTPOForm}
             label={"Current Address"}
             placeholder={"Enter local or current address"}
           />
-          <TextAreaComponent
+          <InputComponent
             field={"permanentAddress"}
             form={TPOForm}
             setForm={setTPOForm}
@@ -112,7 +111,7 @@ const TPOAddDialog = ({ open, setOpen, editable = false, form }) => {
           <DialogClose asChild>
             <Button
               type="button"
-              variant="ghost"
+              variant="outline"
               onClick={() => setOpen(false)}
             >
               Close

@@ -126,5 +126,3 @@ export const studentDetails = {
     "React Native",
   ],
 };
-
-export const studentEducationalDetails = {};

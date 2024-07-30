@@ -12,7 +12,7 @@ const ImageUploadComponent = ({ form, setForm, field }) => {
   };
   return (
     <>
-      <div className="h-16 w-16 md:h-24 md:w-24 rounded-full object-cover relative flex items-center justify-center   p-1 bg-white self-center">
+      <div className="h-20 w-20 rounded-full object-contain relative flex items-center justify-center p-1 bg-muted-foreground self-center">
         <img
           src={form[field] ? URL.createObjectURL(form[field]) : form[field]}
           alt="Avatar"
