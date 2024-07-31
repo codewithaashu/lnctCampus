@@ -11,7 +11,6 @@ const JobDetailsForm = ({
   setJobDetails,
 }) => {
   const handleSave = () => {
-    console.log(jobDetails);
     setFormStage(formStage + 1);
   };
   return (

@@ -17,7 +17,6 @@ import { gender } from "@/db/gender";
 const TPOAddDialog = ({ open, setOpen, editable = false, form }) => {
   const [TPOForm, setTPOForm] = useState(form);
   const handleSubmit = () => {
-    console.log(TPOForm);
     setOpen(false);
   };
 

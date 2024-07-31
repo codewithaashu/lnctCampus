@@ -12,17 +12,13 @@ import TPOAddDialog from "./TPOAddDialog";
 import ViewTPODetails from "./ViewTPODetails";
 
 const TPOTableActions = ({ row }) => {
-  const [openRemoveDialog, setOpenRemoveDialog] = useState(false);
+  const [openRemoveAlert, setOpenRemoveAlert] = useState(false);
   const [openEditDialog, setOpenEditDialog] = useState(false);
   const [viewDetails, setViewDetails] = useState(false);
   const removeStudent = () => {
-    console.log(row);
-    setOpenRemoveDialog(false);
+    setOpenRemoveAlert(false);
   };
-  const changeStatus = () => {
-    console.log(row);
-    setOpenChangeStatusDialog(false);
-  };
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -38,13 +34,13 @@ const TPOTableActions = ({ row }) => {
         <DropdownMenuItem onClick={() => setOpenEditDialog(true)}>
           Edit
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setOpenRemoveDialog(true)}>
+        <DropdownMenuItem onClick={() => setOpenRemoveAlert(true)}>
           Delete
         </DropdownMenuItem>
       </DropdownMenuContent>
       <AlertDialogComponent
-        open={openRemoveDialog}
-        setOpen={setOpenRemoveDialog}
+        open={openRemoveAlert}
+        setOpen={setOpenRemoveAlert}
         title={"Are you absolutely sure?"}
         description={`This action cannot be undone. This will permanently remove ${row?.name} from TPO List.`}
         handleContinue={removeStudent}

@@ -16,16 +16,12 @@ const RegisterStudentTableActions = ({ row }) => {
   const [openChangeStatusDialog, setOpenChangeStatusDialog] = useState(false);
   const navigate = useNavigate();
   const removeStudent = () => {
-    console.log(row);
     setOpenRemoveDialog(false);
   };
   const changeStatus = () => {
-    console.log(row);
     setOpenChangeStatusDialog(false);
   };
-  const markHired = (data) => {
-    console.log(data);
-  };
+  const markHired = (data) => {};
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>

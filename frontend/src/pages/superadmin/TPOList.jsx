@@ -1,5 +1,6 @@
 import TPOListTable from "@/components/dashboard/superadmin/TPOListTable";
 import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import TPOTableColumns from "@/utils/TPOTableColumns";
 import React, { useState } from "react";
 
@@ -58,8 +59,11 @@ const TPOList = () => {
       <div className="w-full flex justify-center">
         <Card className="w-11/12 h-full">
           {/* Heading */}
-          <div className="p-2 flex gap-3 items-center rounded-t-sm bg-muted text-lg  font-semibold px-5">
-            <h1>Training Placement Officer List</h1>
+          <div>
+            <h1 className="p-3 text-xl  font-semibold px-5">
+              Training Placement Officer List
+            </h1>
+            <Separator />
           </div>
           <CardContent className="pt-5">
             <TPOListTable

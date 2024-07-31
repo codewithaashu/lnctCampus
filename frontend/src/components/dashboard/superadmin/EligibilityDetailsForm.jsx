@@ -15,7 +15,6 @@ const EligibilityDetailsForm = ({
   setEligibilityDetails,
 }) => {
   const handleSave = () => {
-    console.log(eligibilityDetails);
     setFormStage(formStage + 1);
   };
   return (

@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import InputComponent from "@/shareable/InputComponent";
 import React, { useState } from "react";
 
@@ -9,15 +10,14 @@ const ChangePassword = () => {
     newPassword: "",
     confirmPassword: "",
   });
-  const handleClick = () => {
-    console.log(form);
-  };
+  const handleClick = () => {};
   return (
     <div className="flex justify-center w-full h-fit mt-3">
       <Card className="w-[480px]">
         {/* Heading */}
-        <div className="p-2 flex gap-3 items-center rounded-t-sm bg-muted text-lg  font-semibold px-3">
-          <h1>Change Password</h1>
+        <div>
+          <h1 className="p-3 text-xl  font-semibold px-5">Change Password</h1>
+          <Separator />
         </div>
         <CardContent className="pt-5 flex flex-col w-full gap-5">
           <div className="flex flex-col gap-3">

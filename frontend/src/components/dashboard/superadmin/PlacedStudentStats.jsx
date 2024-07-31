@@ -5,7 +5,7 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { Label, Pie, PieChart } from "recharts";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import SelectComponent from "@/shareable/SelectComponent";
 import { Programs } from "@/db/programs";
 import { colors, placementStats } from "@/db/placementStats";
@@ -30,20 +30,20 @@ const PlacedStudentStats = () => {
   const [form, setForm] = useState({ course: "" });
   return (
     <>
-      <Card className="pt-3 w-[320px] shadow-md">
+      <Card className="col-span-1 shadow-md h-fit">
+        <CardHeader className="px-7 flex flex-row justify-between gap-5 items-center">
+          <CardTitle className="text-lg">Placed Students</CardTitle>
+          <SelectComponent
+            placeholder={"Program"}
+            label={"Program"}
+            items={Programs}
+            triggerWidth={"w-[100px] h-fit"}
+            field={"course"}
+            form={form}
+            setForm={setForm}
+          />
+        </CardHeader>
         <CardContent>
-          <div className="flex justify-between items-center">
-            <h1 className="font-semibold text-[16.5px]">Placed Students</h1>
-            <SelectComponent
-              placeholder={"Program"}
-              label={"Program"}
-              items={Programs}
-              triggerWidth={"w-[100px] h-fit"}
-              field={"course"}
-              form={form}
-              setForm={setForm}
-            />
-          </div>
           <ChartContainer
             config={chartConfig}
             className="mx-auto aspect-square max-h-[250px]"

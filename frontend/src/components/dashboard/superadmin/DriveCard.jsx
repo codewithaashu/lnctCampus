@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { EllipsisVertical } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -9,28 +9,56 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useNavigate } from "react-router-dom";
+import AlertDialogComponent from "@/shareable/AlertDialogComponent";
+import DriveEditDialog from "./DriveEditDialog";
+import { Badge } from "@/components/ui/badge";
 const DriveCard = () => {
   const navigate = useNavigate();
+  const [openEditDialog, setOpenEditDialog] = useState(false);
+  const [openCloseAlert, setOpenCloseAlert] = useState(false);
+  const [openDeleteAlert, setOpenDeleteAlert] = useState(false);
+
   const handleClick = () => {
     navigate("/drives/student-register");
   };
+
+  const closeDrive = () => {
+    setOpenCloseAlert(false);
+  };
+
+  const deleteDrive = () => {
+    setOpenDeleteAlert(false);
+  };
+
   return (
     <>
       <Card className="rounded-t-sm  border-t-[3px] border-t-primary">
         <div className="flex justify-between gap-5 items-center p-3 py-2 border-b-[1px]">
           <h1 className="text-base font-semibold">TCS Pvt. Ltd</h1>
           <div className="flex gap-3 items-center">
-            <p className="p-[2px] px-2 text-blue-600 bg-blue-100 text-xs  rounded-full">
+            <Badge
+              // variant="secondary"
+              // variant="destructive"
+              className="bg-card-foreground hover:bg-card-foreground text-accent"
+            >
               Active
-            </p>
+            </Badge>
             <DropdownMenu className="w-fit ">
-              <DropdownMenuTrigger className="cursor-pointer hover:bg-muted p-1 rounded-full">
-                <EllipsisVertical className="w-4 h-4" />
+              <DropdownMenuTrigger>
+                <Button variant="ghost" className="h-8 px-3">
+                  <EllipsisVertical className="w-4 h-4" />
+                </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-fit">
-                <DropdownMenuItem>Edit</DropdownMenuItem>
-                <DropdownMenuItem>Close</DropdownMenuItem>
-                <DropdownMenuItem>Delete</DropdownMenuItem>
+              <DropdownMenuContent align="end" className="w-fit">
+                <DropdownMenuItem onClick={() => setOpenEditDialog(true)}>
+                  Edit
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setOpenCloseAlert(true)}>
+                  Close
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => setOpenDeleteAlert(true)}>
+                  Delete
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
@@ -79,6 +107,34 @@ const DriveCard = () => {
           </Button>
         </CardContent>
       </Card>
+      {/* Dialog and alert component */}
+      <DriveEditDialog
+        open={openEditDialog}
+        setOpen={setOpenEditDialog}
+        form={{
+          companyName: "",
+          location: "",
+          jobProfile: "",
+          package: "",
+          jobDescription: "",
+          driveDate: "",
+          lastDateOfApplication: "",
+        }}
+      />
+      <AlertDialogComponent
+        open={openCloseAlert}
+        setOpen={setOpenCloseAlert}
+        title={"Are you absolutely sure?"}
+        description={`This drive will be closed and no one students can fill form.`}
+        handleContinue={closeDrive}
+      />
+      <AlertDialogComponent
+        open={openDeleteAlert}
+        setOpen={setOpenDeleteAlert}
+        title={"Are you absolutely sure?"}
+        description={`This action cannot be undone. This will permanently delete the drive.`}
+        handleContinue={deleteDrive}
+      />
     </>
   );
 };

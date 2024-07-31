@@ -16,7 +16,6 @@ import { Button } from "@/components/ui/button";
 const SuperAdminProfileEditDialog = ({ form, setOpen, open }) => {
   const [editForm, setEditForm] = useState(form);
   const handleSubmit = () => {
-    console.log(editForm);
     setOpen(false);
   };
   return (

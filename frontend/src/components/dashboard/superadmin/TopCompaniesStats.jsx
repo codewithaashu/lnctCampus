@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import React from "react";
 import {
   ChartContainer,
@@ -24,50 +24,52 @@ const TopCompaniesStats = () => {
   };
   return (
     <>
-      <Card className="pt-3 w-[500px] h-[320px] shadow-md">
+      <Card className="shadow-md w-full">
         <CardContent className="flex flex-col gap-5">
-          <div className="flex flex-row justify-between items-center">
-            <h3 className="text-lg font-semibold">Top Companies</h3>
-            <p className="text-sm text-slate-400 font-medium">
+          <CardHeader className="px-7 flex flex-row justify-between gap-5">
+            <CardTitle className="text-lg">Top Companies</CardTitle>
+            <p className="text-sm text-muted-foreground font-medium">
               Number of Placed Students
             </p>
-          </div>
-          <ChartContainer config={chartConfig}>
-            <BarChart
-              accessibilityLayer
-              data={chartData}
-              margin={{
-                top: 20,
-              }}
-              height={500}
-            >
-              <CartesianGrid vertical={false} />
-              <XAxis
-                dataKey="company"
-                tickLine={false}
-                tickMargin={10}
-                axisLine={false}
-                tickFormatter={(value) => value}
-              />
-              <ChartTooltip
-                cursor={false}
-                content={<ChartTooltipContent hideLabel />}
-              />
-              <Bar
-                dataKey="students"
-                fill="var(--color-students)"
-                radius={8}
-                barSize={40}
+          </CardHeader>
+          <CardContent className="pl-2">
+            <ChartContainer config={chartConfig}>
+              <BarChart
+                accessibilityLayer
+                data={chartData}
+                margin={{
+                  top: 20,
+                }}
+                height={500}
               >
-                <LabelList
-                  position="top"
-                  offset={12}
-                  className="fill-foreground"
-                  fontSize={12}
+                <CartesianGrid vertical={false} />
+                <XAxis
+                  dataKey="company"
+                  tickLine={false}
+                  tickMargin={10}
+                  axisLine={false}
+                  tickFormatter={(value) => value}
                 />
-              </Bar>
-            </BarChart>
-          </ChartContainer>
+                <ChartTooltip
+                  cursor={false}
+                  content={<ChartTooltipContent hideLabel />}
+                />
+                <Bar
+                  dataKey="students"
+                  fill="var(--color-students)"
+                  radius={8}
+                  barSize={40}
+                >
+                  <LabelList
+                    position="top"
+                    offset={12}
+                    className="fill-foreground"
+                    fontSize={12}
+                  />
+                </Bar>
+              </BarChart>
+            </ChartContainer>
+          </CardContent>
         </CardContent>
       </Card>
     </>

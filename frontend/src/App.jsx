@@ -10,7 +10,7 @@ const App = () => {
         <SideBar />
         <div className="flex flex-col w-full">
           <TopBar />
-          <div className="p-5 flex-1">
+          <div className="p-5 flex-1 bg-accent">
             <Outlet />
           </div>
         </div>

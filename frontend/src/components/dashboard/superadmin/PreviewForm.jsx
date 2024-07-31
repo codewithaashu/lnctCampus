@@ -17,9 +17,7 @@ const PreviewForm = ({
     };
     setDriveFormData({ ...jobDetails, ...updateEligibilityDetails });
   }, []);
-  const handleSubmit = () => {
-    console.log("Submit successfully");
-  };
+  const handleSubmit = () => {};
   return (
     <div className="flex flex-col gap-5 justify-between h-full">
       <div className="flex flex-col gap-2">

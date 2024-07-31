@@ -2,7 +2,7 @@ import PlacedStudentStats from "@/components/dashboard/superadmin/PlacedStudentS
 import RecentPlacedCard from "@/components/dashboard/superadmin/RecentPlacedCard";
 import StatsCard from "@/components/dashboard/superadmin/StatsCard";
 import TopCompaniesStats from "@/components/dashboard/superadmin/TopCompaniesStats";
-import UpcomingCard from "@/components/dashboard/superadmin/UpcomingCard";
+import UpcomingEventsCard from "@/components/dashboard/superadmin/UpcomingEventsCard";
 import { superAdminStats } from "@/db/superAdminStats";
 import React from "react";
 
@@ -16,15 +16,15 @@ const Dashboard = () => {
             <StatsCard title={curr.label} value={curr.value} key={index} />
           ))}
         </div>
-        {/* Recent Placements and Upcoming Events */}
-        {/* <div className="flex gap-5">
-          <RecentPlacedCard />
-          <UpcomingCard />
-        </div> */}
-        {/* Placed Students and Top Companies */}
-        <div className="flex justify-between gap-8">
-          <PlacedStudentStats />
+        {/*Top placement chart and Upcoming Events */}
+        <div className="grid gap-5 md:grid-cols-2">
           <TopCompaniesStats />
+          <UpcomingEventsCard />
+        </div>
+        {/* Placed Students and Placed student stats */}
+        <div className="grid gap-5 md:grid-cols-3">
+          <RecentPlacedCard />
+          <PlacedStudentStats />
         </div>
       </div>
     </>

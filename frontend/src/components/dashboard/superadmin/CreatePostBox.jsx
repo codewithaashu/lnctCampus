@@ -22,7 +22,6 @@ const CreatePostBox = () => {
       ...postDetails,
       courses,
     };
-    console.log(updatePostDetails);
   };
   return (
     <>
