@@ -25,6 +25,7 @@ const TPOAddBtn = () => {
           whatsappNo: "",
           currentAddress: "",
           permanentAddress: "",
+          gender: "",
           department: "",
         }}
       />

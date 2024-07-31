@@ -63,6 +63,7 @@ const TPOTableActions = ({ row }) => {
           whatsappNo: "",
           currentAddress: "",
           permanentAddress: "",
+          gender: "",
           department: "",
         }}
       />

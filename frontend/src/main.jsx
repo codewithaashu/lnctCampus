@@ -14,6 +14,8 @@ import RegisteredStudents from "./components/dashboard/superadmin/RegisteredStud
 import DrivesBox from "./components/dashboard/superadmin/DrivesBox";
 import StudentDetails from "./components/dashboard/superadmin/StudentDetails";
 import { Toaster } from "sonner";
+import Profile from "./pages/superadmin/Profile";
+import ChangePassword from "./pages/superadmin/ChangePassword";
 
 const router = createBrowserRouter([
   {
@@ -57,6 +59,14 @@ const router = createBrowserRouter([
       {
         path: "/tpo",
         element: <TPOList />,
+      },
+      {
+        path: "/profile",
+        element: <Profile />,
+      },
+      {
+        path: "/change-password",
+        element: <ChangePassword />,
       },
     ],
   },

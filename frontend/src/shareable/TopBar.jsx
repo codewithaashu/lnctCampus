@@ -8,43 +8,63 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Moon, Sun } from "lucide-react";
+import { ChevronDown, Moon, Sun } from "lucide-react";
 import { useTheme } from "@/components/theme-provider";
+import { useNavigate } from "react-router-dom";
 
 const TopBar = () => {
   const { setTheme, theme } = useTheme();
+  const navigate = useNavigate();
   return (
     <>
       <div className="h-14 border-[1px] flex justify-end gap-5 px-5 items-center rounded-sm shadow-md">
         <div className="rounded-full p-2 border-[1px] shadow-sm ">
           {theme === "light" ? (
             <Sun
-              className="cursor-pointer w-5 h-5"
+              className="cursor-pointer w-[18px] h-[18px]"
               onClick={() => setTheme("dark")}
             />
           ) : (
             <Moon
-              className="cursor-pointer w-5 h-5"
+              className="cursor-pointer w-[18px] h-[18px]"
               onClick={() => setTheme("light")}
             />
           )}
         </div>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Avatar className="cursor-pointer h-9 w-9">
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            <DropdownMenuLabel>My Account</DropdownMenuLabel>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Profile</DropdownMenuItem>
-            <DropdownMenuItem>Change Password</DropdownMenuItem>
-            <DropdownMenuSeparator />
-            <DropdownMenuItem>Logout</DropdownMenuItem>
-          </DropdownMenuContent>
-        </DropdownMenu>
+        <div className="flex gap-2 items-center">
+          <Avatar className="h-8 w-8">
+            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <div className="flex gap-1 cursor-pointer">
+                <h1 className="text-muted-foreground text-[13.4px] font-semibold">
+                  Pushpank Thakur
+                </h1>
+                <ChevronDown className="w-[15px] h-[15px] text-muted-foreground self-end" />
+              </div>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              <DropdownMenuLabel>My Account</DropdownMenuLabel>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem
+                className="cursor-pointer"
+                onClick={() => navigate("/profile")}
+              >
+                Profile
+              </DropdownMenuItem>
+              <DropdownMenuItem
+                className="cursor-pointer"
+                onClick={() => navigate("/change-password")}
+              >
+                Change Password
+              </DropdownMenuItem>
+              <DropdownMenuSeparator />
+              <DropdownMenuItem>Logout</DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </div>
     </>
   );

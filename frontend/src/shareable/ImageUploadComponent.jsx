@@ -16,9 +16,9 @@ const ImageUploadComponent = ({ form, setForm, field }) => {
         <img
           src={form[field] ? URL.createObjectURL(form[field]) : form[field]}
           alt="Avatar"
-          className="h-full w-full rounded-full"
+          className="h-full w-full rounded-full align-middle text-center"
         />
-        <label className="absolute bottom-3 bg-gray-300 right-0 cursor-pointer text-sm  p-1 rounded-full text-black font-semibold hover:bg-gray-100 shadow-md">
+        <label className="absolute bottom-3 bg-muted right-0 cursor-pointer text-sm  p-1 rounded-full text-black font-semibold shadow-md">
           <input
             type="file"
             className="hidden"
