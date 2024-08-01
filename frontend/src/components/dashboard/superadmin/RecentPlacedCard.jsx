@@ -92,7 +92,7 @@ const RecentPlacedCard = () => {
               {placedData.map((curr, index) => (
                 <TableRow className="hover:bg-accent" key={index}>
                   <TableCell>
-                    <div className="flex items-center gap-3 justify-center">
+                    <div className="flex items-center gap-3">
                       <div className="h-10 w-10 rounded-full">
                         <img
                           className="aspect-square h-full w-full rounded-full"

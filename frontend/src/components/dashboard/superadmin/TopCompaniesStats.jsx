@@ -24,9 +24,9 @@ const TopCompaniesStats = () => {
   };
   return (
     <>
-      <Card className="shadow-md w-full">
+      <Card className="shadow-md w-full lg:col-span-4">
         <CardContent className="flex flex-col gap-5">
-          <CardHeader className="px-7 flex flex-row justify-between gap-5">
+          <CardHeader className="px-3 flex flex-row justify-between gap-5">
             <CardTitle className="text-lg">Top Companies</CardTitle>
             <p className="text-sm text-muted-foreground font-medium">
               Number of Placed Students

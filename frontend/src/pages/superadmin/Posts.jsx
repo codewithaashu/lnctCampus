@@ -10,23 +10,21 @@ import {
 const Posts = () => {
   return (
     <>
-      <div className="w-full h-full flex flex-col items-center">
-        <Card className={`rounded-md border w-11/12 h-full`}>
-          <ResizablePanelGroup direction="horizontal" className="h-full w-full">
-            <ResizablePanel minSize={30} defaultSize={35} maxSize={60}>
-              <div className={`flex h-full items-center justify-center w-full`}>
-                <PostListBox />
-              </div>
-            </ResizablePanel>
-            <ResizableHandle withHandle />
-            <ResizablePanel defaultSize={65} minSize={40} maxSize={70}>
-              <div className="grid h-full  justify-center w-full relative">
-                <PostContentBox />
-              </div>
-            </ResizablePanel>
-          </ResizablePanelGroup>
-        </Card>
-      </div>
+      <Card className="rounded-md border w-full h-full">
+        <ResizablePanelGroup direction="horizontal" className="h-full w-full">
+          <ResizablePanel minSize={30} defaultSize={35} maxSize={60}>
+            <div className="flex h-full items-center justify-center w-full">
+              <PostListBox />
+            </div>
+          </ResizablePanel>
+          <ResizableHandle withHandle />
+          <ResizablePanel defaultSize={65} minSize={40} maxSize={70}>
+            <div className="grid h-full  justify-center w-full relative">
+              <PostContentBox />
+            </div>
+          </ResizablePanel>
+        </ResizablePanelGroup>
+      </Card>
     </>
   );
 };

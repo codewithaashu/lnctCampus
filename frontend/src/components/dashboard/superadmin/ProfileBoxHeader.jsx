@@ -8,8 +8,8 @@ const ProfileBoxHeader = () => {
   const [openEditDialog, setOpenEditDialog] = useState(false);
   return (
     <>
-      <div className="grid grid-cols-2 w-full">
-        <div className="flex gap-2 flex-col justify-self-end">
+      <div className="flex w-full">
+        <div className="flex gap-2 flex-col mx-auto">
           <img
             src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPWQTnePNQOhGoSq8Sv0hdxWo0QOU_Ys-6djgmxz3f7vYE_QqTANwmbRCU7TADxAQ6-dedxQ07miTw15vMFfBqOPxrZTid5BtVW8d55uP4Rl_z4jpHGUD8VjktnfAo5RMdLQ0ai7wJwOI/s570/Shazim+uddin+pp+image+with+stroke.jpg"
             alt="Human"

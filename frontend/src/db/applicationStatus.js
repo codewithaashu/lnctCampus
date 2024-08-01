@@ -1,7 +1,7 @@
 export const applicationStatus = [
-  { title: "Shortlisted", value: "Shortlisted" },
-  { title: "Pending", value: "Pending" },
-  { title: "Next Round", value: "Next Round" },
-  { title: "Hired", value: "Hired" },
-  { title: "Rejected", value: "Rejected" },
+  { label: "Shortlisted", value: "Shortlisted" },
+  { label: "Pending", value: "Pending" },
+  { label: "Next Round", value: "Next Round" },
+  { label: "Hired", value: "Hired" },
+  { label: "Rejected", value: "Rejected" },
 ];

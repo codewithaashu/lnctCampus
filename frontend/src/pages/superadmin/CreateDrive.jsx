@@ -3,6 +3,7 @@ import JobDetailsForm from "@/components/dashboard/superadmin/JobDetailsForm";
 import PreviewForm from "@/components/dashboard/superadmin/PreviewForm";
 import Track from "@/components/dashboard/superadmin/Track";
 import { Card, CardContent } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 import React, { useState } from "react";
 
 const CreateDrive = () => {
@@ -33,9 +34,6 @@ const CreateDrive = () => {
     if (formStage === 1) {
       return (
         <Card className="h-fit">
-          <h1 className="p-2 rounded-t-sm bg-primary text-lg text-white font-semibold px-5">
-            Job Details
-          </h1>
           <CardContent className="pt-6">
             <JobDetailsForm
               setFormStage={setFormStage}
@@ -49,10 +47,6 @@ const CreateDrive = () => {
     } else if (formStage === 2) {
       return (
         <Card className="h-fit">
-          {/* Heading */}
-          <h1 className="p-2 rounded-t-sm bg-primary text-lg text-white font-semibold px-5">
-            Eligibility
-          </h1>
           <CardContent className="pt-6">
             {/* Form */}
             <EligibilityDetailsForm
@@ -67,10 +61,6 @@ const CreateDrive = () => {
     } else if (formStage === 3) {
       return (
         <Card className="h-fit">
-          {/* Heading */}
-          <h1 className="p-2 rounded-t-sm bg-primary text-lg text-white font-semibold px-5">
-            Preview
-          </h1>
           <CardContent className="h-fit pt-6">
             {/* Form */}
             <PreviewForm
@@ -88,7 +78,7 @@ const CreateDrive = () => {
   return (
     <>
       <div className="flex flex-col gap-5 w-full h-full">
-        <Track setFormStage={setFormStage} formStage={formStage} />
+        <Track formStage={formStage} />
         {showForm(formStage)}
       </div>
     </>

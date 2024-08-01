@@ -23,7 +23,7 @@ const SideBar = () => {
 
   return (
     <>
-      <div className="flex flex-col shadow-md min-h-screen px-5 gap-3 border-2 w-[240px] rounded-r-md">
+      <div className="flex flex-col shadow-md h-screen bg-background px-5 gap-3  w-[210px] rounded-b-md fixed top-0 left-0 z-20">
         {/* Logo */}
         <div className="h-14 border-b-[1px] border-muted flex items-center">
           <img src={Logo} className="h-8" />

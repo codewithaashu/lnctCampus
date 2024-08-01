@@ -3,7 +3,7 @@ import React from "react";
 const EventCard = () => {
   return (
     <>
-      <div className="border border-primary p-3 rounded-lg border-l-[6px]  px-4 w-11/12">
+      <div className="border border-primary p-3 rounded-lg border-l-[6px]  px-4">
         <div className="flex flex-col items-center w-fit gap-[2px]">
           <h1 className="text-base font-semibold leading-none">
             Google Placement Drive

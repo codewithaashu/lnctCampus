@@ -5,7 +5,7 @@ import { studentDetails } from "@/db/studentDetails";
 const StudentDetailsBox = () => {
   return (
     <>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 px-5">
         <StudentDetailsBoxHeader />
         <div className="grid grid-cols-2 gap-4">
           {/* 1st Column */}
@@ -15,7 +15,7 @@ const StudentDetailsBox = () => {
               <h1 className="text-base font-semibold text-sky-700">
                 Personal Details
               </h1>
-              <div className="">
+              <div className="px-1">
                 {studentDetails?.personalDetails?.map((curr, index) => {
                   return (
                     <div
@@ -43,7 +43,7 @@ const StudentDetailsBox = () => {
               <h1 className="text-base font-semibold text-sky-700">
                 Current Course Information
               </h1>
-              <table className="w-full border-collapse rounded-lg border-[1px]">
+              <table className="w-full border-collapse rounded-lg border-[1px] mx-1">
                 <thead>
                   <tr>
                     <th className="p-2 border-[1px] text-center bg-muted font-semibold text-[15px]">
@@ -80,7 +80,7 @@ const StudentDetailsBox = () => {
             {/* Skills */}
             <div className="flex flex-col gap-2">
               <h1 className="text-base font-semibold text-sky-700">Skills</h1>
-              <div className="flex flex-wrap gap-5 gap-y-3">
+              <div className="flex flex-wrap gap-5 gap-y-3 mx-1">
                 {studentDetails?.skills?.map((curr, index) => {
                   return (
                     <div
@@ -99,7 +99,7 @@ const StudentDetailsBox = () => {
           <h1 className="text-base font-semibold text-sky-700">
             Education Details
           </h1>
-          <table className="w-full border-collapse rounded-lg">
+          <table className="w-full border-collapse rounded-lg mx-1">
             <thead>
               <tr>
                 <th className="p-3 border-[1px] text-center bg-muted font-semibold text-[15px]">

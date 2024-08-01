@@ -56,25 +56,23 @@ const TPOList = () => {
   });
   return (
     <>
-      <div className="w-full flex justify-center">
-        <Card className="w-11/12 h-full">
-          {/* Heading */}
-          <div>
-            <h1 className="p-3 text-xl  font-semibold px-5">
-              Training Placement Officer List
-            </h1>
-            <Separator />
-          </div>
-          <CardContent className="pt-5">
-            <TPOListTable
-              data={rowData}
-              columns={TPOTableColumns}
-              columnVisibility={columnVisibility}
-              setColumnVisibility={setColumnVisibility}
-            />
-          </CardContent>
-        </Card>
-      </div>
+      <Card className="w-full h-full">
+        {/* Heading */}
+        <div>
+          <h1 className="p-3 text-xl  font-semibold px-5">
+            Training Placement Officer List
+          </h1>
+          <Separator />
+        </div>
+        <CardContent className="pt-5">
+          <TPOListTable
+            data={rowData}
+            columns={TPOTableColumns}
+            columnVisibility={columnVisibility}
+            setColumnVisibility={setColumnVisibility}
+          />
+        </CardContent>
+      </Card>
     </>
   );
 };

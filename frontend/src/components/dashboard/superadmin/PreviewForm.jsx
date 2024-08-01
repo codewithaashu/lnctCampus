@@ -20,25 +20,32 @@ const PreviewForm = ({
   const handleSubmit = () => {};
   return (
     <div className="flex flex-col gap-5 justify-between h-full">
-      <div className="flex flex-col gap-2">
+      <div className="grid grid-cols-2 gap-5">
         {Object.keys(previewData)?.map((curr, index) => (
-          <div key={index}>
-            <h1 className="text-base font-semibold">{curr}</h1>
-            {previewData?.[curr]?.map((curr, index) => (
-              <div
-                className="grid grid-cols-3 items-center my-1 justify-center"
-                key={index}
-              >
-                <h1 className="text-sm col-span-1">{curr.label}:</h1>
-                <p className="text-[15px] text-muted-foreground  col-span-2">
-                  {(curr.startsWith ? curr.startsWith : "") +
-                    " " +
-                    driveFormData[curr.value] +
-                    " " +
-                    (curr.endsWith ? curr.endsWith : "")}
-                </p>
-              </div>
-            ))}
+          <div
+            key={index}
+            className={`${
+              curr === "Job Details" ? "col-span-2" : "col-span-1"
+            } flex flex-col gap-[6px]`}
+          >
+            <h1 className="text-[17px] font-semibold">{curr}</h1>
+            <div className="flex flex-col gap-1 px-1">
+              {previewData?.[curr]?.map((curr, index) => (
+                <div className="grid grid-cols-2 gap-4" key={index}>
+                  <h1 className="text-sm col-span-1 font-medium">
+                    {curr.label}
+                  </h1>
+                  <p className="text-sm col-span-1 font-medium text-wrap">
+                    <span className="pr-2">:</span>{" "}
+                    {(curr.startsWith ? curr.startsWith : "") +
+                      " " +
+                      driveFormData[curr.value] +
+                      " " +
+                      (curr.endsWith ? curr.endsWith : "")}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         ))}
         <h1></h1>

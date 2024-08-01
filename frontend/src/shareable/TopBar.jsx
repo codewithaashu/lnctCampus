@@ -17,7 +17,10 @@ const TopBar = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="h-14 border-[1px] flex justify-end gap-5 px-5 items-center rounded-sm shadow-md">
+      <div
+        className="h-14  flex justify-end gap-5 px-5 items-center shadow-md fixed top-0 left-[210px] bg-background z-10"
+        style={{ width: window.innerWidth - 210 + "px" }}
+      >
         <div className="rounded-full p-2 border-[1px] shadow-sm ">
           {theme === "light" ? (
             <Sun

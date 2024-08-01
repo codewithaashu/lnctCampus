@@ -85,7 +85,7 @@ const RegisteredStudents = () => {
 
   return (
     <>
-      <Card className="w-11/12">
+      <Card className="w-full">
         {/* Heading */}
         <div className="p-3 flex gap-3 items-center  text-xl  font-semibold px-5">
           <ArrowLeft

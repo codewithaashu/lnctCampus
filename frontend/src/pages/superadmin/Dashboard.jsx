@@ -17,7 +17,7 @@ const Dashboard = () => {
           ))}
         </div>
         {/*Top placement chart and Upcoming Events */}
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-7">
           <TopCompaniesStats />
           <UpcomingEventsCard />
         </div>

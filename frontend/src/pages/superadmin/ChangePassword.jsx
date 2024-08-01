@@ -12,7 +12,7 @@ const ChangePassword = () => {
   });
   const handleClick = () => {};
   return (
-    <div className="flex justify-center w-full h-fit mt-3">
+    <div className="flex justify-center w-full h-fit">
       <Card className="w-[480px]">
         {/* Heading */}
         <div>

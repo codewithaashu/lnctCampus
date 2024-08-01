@@ -1,6 +1,6 @@
 import React from "react";
 
-const Track = ({ setFormStage, formStage }) => {
+const Track = ({ formStage }) => {
   return (
     <>
       <div className="flex flex-row justify-center">
@@ -17,8 +17,10 @@ const Track = ({ setFormStage, formStage }) => {
           </div>
           <h1
             className={`${
-              formStage === 1 ? "text-primary" : "text-muted-foreground"
-            } text-[13px] font-semibold`}
+              formStage === 1
+                ? "text-primary font-semibold"
+                : "text-muted-foreground font-medium"
+            } text-[13px] `}
           >
             Job Details
           </h1>
@@ -27,8 +29,10 @@ const Track = ({ setFormStage, formStage }) => {
           <div className="flex items-center">
             <div
               className={`aspect-square w-7 h-7 flex items-center justify-center rounded-full ${
-                formStage >= 2 ? "bg-primary" : "bg-[#E5D7FC]"
-              }  text-white object-center text-sm font-semibold`}
+                formStage >= 2
+                  ? "bg-primary font-semibold"
+                  : "bg-[#E5D7FC] font-medium"
+              }  text-white object-center text-sm `}
             >
               <h1>2</h1>
             </div>
@@ -40,8 +44,10 @@ const Track = ({ setFormStage, formStage }) => {
           </div>
           <h1
             className={`${
-              formStage === 2 ? "text-primary" : "text-muted-foreground"
-            } text-[13px] font-semibold`}
+              formStage === 2
+                ? "text-primary font-semibold"
+                : "text-muted-foreground font-medium"
+            } text-[13px]`}
           >
             Eligibility
           </h1>
@@ -50,16 +56,20 @@ const Track = ({ setFormStage, formStage }) => {
           <div className="flex items-center">
             <div
               className={`aspect-square w-7 h-7 flex items-center justify-center rounded-full ${
-                formStage >= 3 ? "bg-primary" : "bg-[#E5D7FC]"
-              }  text-white object-center text-sm font-semibold`}
+                formStage >= 3
+                  ? "bg-primary font-semibold"
+                  : "bg-[#E5D7FC] font-medium"
+              }  text-white object-center text-sm`}
             >
               <h1>3</h1>
             </div>
           </div>
           <h1
             className={`${
-              formStage === 3 ? "text-primary" : "text-muted-foreground"
-            } text-[13px] font-semibold`}
+              formStage === 3
+                ? "text-primary font-semibold"
+                : "text-muted-foreground font-medium"
+            } text-[13px]`}
           >
             Preview
           </h1>

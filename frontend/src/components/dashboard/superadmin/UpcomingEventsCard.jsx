@@ -5,7 +5,7 @@ import EventCard from "./EventCard";
 const UpcomingEventsCard = () => {
   return (
     <>
-      <div className="w-full h-full">
+      <div className="w-full h-full lg:col-span-3">
         <Card className="w-full h-full">
           <CardHeader className="px-7">
             <CardTitle className="text-lg">Upcoming Schedule</CardTitle>

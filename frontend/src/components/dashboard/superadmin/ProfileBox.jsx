@@ -5,7 +5,7 @@ import { tpoDetails } from "@/db/tpoDetails";
 const ProfileBox = () => {
   return (
     <>
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 px-5">
         <ProfileBoxHeader />
         <div className="flex flex-col gap-2">
           {/* Peronal Details */}
@@ -13,7 +13,7 @@ const ProfileBox = () => {
             <h1 className="text-base font-semibold text-sky-700">
               Personal Details
             </h1>
-            <div className="">
+            <div className="px-1">
               {tpoDetails?.personalDetails?.map((curr, index) => {
                 return (
                   <div
@@ -37,7 +37,7 @@ const ProfileBox = () => {
             <h1 className="text-base font-semibold text-sky-700">
               Contact Details
             </h1>
-            <div className="">
+            <div className="px-1">
               {tpoDetails?.contactDetails?.map((curr, index) => {
                 return (
                   <div

@@ -40,6 +40,8 @@ const MultipleSelectComponent = ({
         })
       : setForm({ ...form, [field]: [...data, item] });
   };
+  const popoverWidth =
+    window.innerWidth - 210 - (window.innerWidth - 210) / 12 - 80;
   return (
     <div className="grid w-full gap-1.5 col-span-2">
       <Label className="text-base px-1">{label}</Label>
@@ -57,7 +59,7 @@ const MultipleSelectComponent = ({
             <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="max-w-sm p-0">
+        <PopoverContent className=" p-0" style={{ width: popoverWidth + "px" }}>
           <Command>
             <CommandInput placeholder="Search course..." />
             <CommandEmpty>{emptyPlaceholder}</CommandEmpty>

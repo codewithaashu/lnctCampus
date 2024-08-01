@@ -27,24 +27,27 @@ const CreatePostBox = () => {
     <>
       <div className="flex flex-col gap-6 justify-self-end">
         <div className="flex flex-col gap-5">
-          <InputComponent
-            placeholder={"Write post title here..."}
-            label={"Post Title"}
-            type={"text"}
-            field={"title"}
-            form={postDetails}
-            setForm={setPostDetails}
-          />
-          <SelectLabelComponent
-            title={"Post Category"}
-            items={postCategory}
-            triggerWidth={"w-full"}
-            placeholder={"Select post category"}
-            label={"Post Category"}
-            field={"category"}
-            form={postDetails}
-            setForm={setPostDetails}
-          />
+          <div className="grid grid-cols-2 gap-5">
+            <InputComponent
+              placeholder={"Write post title here..."}
+              label={"Post Title"}
+              type={"text"}
+              field={"title"}
+              form={postDetails}
+              setForm={setPostDetails}
+            />
+            <SelectLabelComponent
+              title={"Post Category"}
+              items={postCategory}
+              triggerWidth={"w-full"}
+              placeholder={"Select post category"}
+              label={"Post Category"}
+              field={"category"}
+              form={postDetails}
+              setForm={setPostDetails}
+            />
+          </div>
+
           {/* Post Description */}
           <RichTextEditor
             label={"Post Description"}

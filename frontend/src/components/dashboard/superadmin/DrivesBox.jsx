@@ -11,7 +11,7 @@ const DrivesBox = () => {
   const [value, setValue] = useState("");
   return (
     <>
-      <Card className="w-11/12">
+      <Card className="w-full">
         {/* Heading */}
         <div>
           <h1 className="p-3 text-xl font-semibold px-5">All Drives</h1>
