@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { driveSortCriteria } from "@/db/sortBt";
+import { driveSortCriteria } from "@/db/driveSortCriteria";
 import SelectComponent from "@/shareable/SelectComponent";
 import React, { useState } from "react";
 import DriveCard from "./DriveCard";

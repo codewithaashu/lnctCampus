@@ -13,7 +13,10 @@ const PaginationComponent = () => {
     <Pagination>
       <PaginationContent>
         <PaginationItem>
-          <PaginationPrevious href="#" className="h-8 text-sm" />
+          <PaginationPrevious
+            href="#"
+            className="h-8 text-sm focus-visible:ring-0 focus-visible:ring-transparent"
+          />
         </PaginationItem>
         <PaginationItem>
           <PaginationLink href="#" className="h-7 w-7">

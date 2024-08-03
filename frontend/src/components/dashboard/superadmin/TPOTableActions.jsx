@@ -10,6 +10,7 @@ import { MoreHorizontal } from "lucide-react";
 import React, { useState } from "react";
 import TPOAddDialog from "./TPOAddDialog";
 import ViewTPODetails from "./ViewTPODetails";
+import { tpoDetails } from "@/db/tpoDetails";
 
 const TPOTableActions = ({ row }) => {
   const [openRemoveAlert, setOpenRemoveAlert] = useState(false);
@@ -22,7 +23,10 @@ const TPOTableActions = ({ row }) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" className="h-8 w-8 p-0">
+        <Button
+          variant="ghost"
+          className="h-8 w-8 p-0 focus-visible:ring-0 focus-visible:ring-transparent"
+        >
           <span className="sr-only">Open menu</span>
           <MoreHorizontal className="h-4 w-4" />
         </Button>
@@ -51,8 +55,8 @@ const TPOTableActions = ({ row }) => {
         editable={true}
         form={{
           image: "",
-          firstName: "Dr. Virendra",
-          lastName: "Tiwari",
+          firstName: "Rohan",
+          lastName: "Kumar",
           dob: "",
           email: "",
           contactNo: "",
@@ -63,7 +67,11 @@ const TPOTableActions = ({ row }) => {
           department: "",
         }}
       />
-      <ViewTPODetails setOpen={setViewDetails} open={viewDetails} />
+      <ViewTPODetails
+        setOpen={setViewDetails}
+        open={viewDetails}
+        data={tpoDetails}
+      />
     </DropdownMenu>
   );
 };

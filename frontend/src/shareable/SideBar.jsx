@@ -1,8 +1,7 @@
 import React from "react";
 import Logo from "../assets/logo.svg";
-import { superAdminMenus } from "@/db/superAdminMenus";
 import { Link, useHref } from "react-router-dom";
-const SideBar = () => {
+const SideBar = ({ menus }) => {
   const currentPath = useHref();
   const bgColor = (path) => {
     if (path === "/" && currentPath === "/") {
@@ -30,7 +29,7 @@ const SideBar = () => {
         </div>
         {/* Menu */}
         <div className="flex flex-col gap-[10px]">
-          {superAdminMenus.map((curr, index) => (
+          {menus?.map((curr, index) => (
             <Link
               className={`flex gap-2  text-[15px] cursor-pointer ${hoverColor(
                 curr.path

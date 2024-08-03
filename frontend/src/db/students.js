@@ -1,0 +1,67 @@
+export const students = [
+  {
+    enrollNo: "LNCBTAI11037",
+    name: "Divya Kumari",
+    email: "divyakr67@gmail.com",
+    contactNo: "8779856321",
+    alternateNo: "8999856321",
+    department: "LNCT MCA",
+    gender: "Female",
+    cgpa: 9.5,
+    resume:
+      "https://drive.google.com/file/d/1qjLlzgIiZM-p4HQFxh-2lVmUH5nfbdXb/view?usp=sharing",
+    status: "Verified",
+  },
+  {
+    enrollNo: "LNCDMCA11035",
+    name: "Ashish Ranjan",
+    email: "ashya2616@gmail.com",
+    contactNo: "7371986179",
+    alternateNo: "9279753039",
+    department: "LNCTU MCA",
+    gender: "Male",
+    cgpa: 9.8,
+    resume:
+      "https://drive.google.com/file/d/1qjLlzgIiZM-p4HQFxh-2lVmUH5nfbdXb/view?usp=sharing",
+    status: "Hired",
+  },
+  {
+    enrollNo: "LNCDBCA21052",
+    name: "Bhumi Singh",
+    email: "bhumi896@gmail.com",
+    contactNo: "8271595016",
+    alternateNo: "8229856345",
+    department: "MCA AIML",
+    cgpa: 8.3,
+    gender: "Female",
+    resume:
+      "https://drive.google.com/file/d/1qjLlzgIiZM-p4HQFxh-2lVmUH5nfbdXb/view?usp=sharing",
+    status: "Blacklist",
+  },
+  {
+    enrollNo: "012RCSE11038",
+    name: "Rohan Kumar",
+    email: "rohankt67@gmail.com",
+    contactNo: "6261220344",
+    alternateNo: "7365520344",
+    department: "LNCT MCA",
+    cgpa: 8.8,
+    gender: "Male",
+    resume:
+      "https://drive.google.com/file/d/1qjLlzgIiZM-p4HQFxh-2lVmUH5nfbdXb/view?usp=sharing",
+    status: "Unverified",
+  },
+  {
+    enrollNo: "LNCBTAI21037",
+    name: "Shreya Singh",
+    email: "neeva02singh@gmail.com",
+    contactNo: "9978856542",
+    alternateNo: "8878856511",
+    department: "LNCTU MCA",
+    cgpa: 9.2,
+    gender: "Female",
+    resume:
+      "https://drive.google.com/file/d/1qjLlzgIiZM-p4HQFxh-2lVmUH5nfbdXb/view?usp=sharing",
+    status: "Verified",
+  },
+];

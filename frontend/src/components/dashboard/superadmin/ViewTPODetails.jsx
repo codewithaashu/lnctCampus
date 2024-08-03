@@ -7,7 +7,7 @@ import {
   DialogFooter,
 } from "@/components/ui/dialog";
 import { tpoDetails } from "@/db/tpoDetails";
-const ViewTPODetails = ({ open, setOpen }) => {
+const ViewTPODetails = ({ open, setOpen, data }) => {
   return (
     <Dialog open={open}>
       <DialogContent className="w-[425px] md:w-[720px] max-w-full no-scrollbar max-h-screen overflow-auto">
@@ -16,14 +16,14 @@ const ViewTPODetails = ({ open, setOpen }) => {
             {/* Header with image and name with department */}
             <div className="flex gap-3 flex-row items-center justify-center">
               <img
-                src="https://img.freepik.com/free-photo/confident-male-teacher-wearing-glasses-sitting-table-with-school-tools-classroom_141793-114409.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721088000&semt=ais_user"
+                src={data?.imgSrc}
                 alt="Human"
                 className="w-[100px] h-[100px] rounded-full object-center aspect-square"
               />
               <div className="flex flex-col gap-[1px] items-center">
-                <h1 className="text-lg font-semibold">Virendra Tiwari</h1>
+                <h1 className="text-lg font-semibold">{data?.name}</h1>
                 <p className="text-xs font-semibold text-muted-foreground">
-                  LNCT MCA TPO
+                  {data?.designation}
                 </p>
               </div>
             </div>
@@ -35,7 +35,7 @@ const ViewTPODetails = ({ open, setOpen }) => {
                   Personal Details
                 </h1>
                 <div className="flex flex-col gap-[2px] w-full">
-                  {tpoDetails?.personalDetails?.map((curr, index) => {
+                  {data?.personalDetails?.map((curr, index) => {
                     return (
                       <div
                         className="grid grid-cols-2 text-card-foreground font-medium w-full"
@@ -59,7 +59,7 @@ const ViewTPODetails = ({ open, setOpen }) => {
                   Contact Details
                 </h1>
                 <div className="flex flex-col gap-[2px] w-full">
-                  {tpoDetails?.contactDetails?.map((curr, index) => {
+                  {data?.contactDetails?.map((curr, index) => {
                     return (
                       <div
                         className="grid grid-cols-2 text-card-foreground font-medium w-full"

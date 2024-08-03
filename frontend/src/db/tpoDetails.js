@@ -1,4 +1,8 @@
 export const tpoDetails = {
+  name: "Dr. Virendra Tiwari",
+  designation: "MCA TPO",
+  imgSrc:
+    "https://img.freepik.com/free-photo/confident-male-teacher-wearing-glasses-sitting-table-with-school-tools-classroom_141793-114409.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1721088000&semt=ais_user",
   personalDetails: [
     {
       label: "User ID",

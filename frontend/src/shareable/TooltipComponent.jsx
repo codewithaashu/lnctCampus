@@ -16,7 +16,7 @@ const TooltipComponent = ({
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger>
-          <Button variant={variant} onClick={handleClick}>
+          <Button variant={variant} onClick={handleClick} size="sm">
             <Icon className="w-4 h-4" />
           </Button>
         </TooltipTrigger>

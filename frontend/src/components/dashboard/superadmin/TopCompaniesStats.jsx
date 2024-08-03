@@ -6,16 +6,7 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 import { Bar, BarChart, CartesianGrid, LabelList, XAxis } from "recharts";
-const TopCompaniesStats = () => {
-  const chartData = [
-    { company: "Google", students: 186 },
-    { company: "Amazon", students: 305 },
-    { company: "Netflix", students: 237 },
-    { company: "Blinkit", students: 73 },
-    { company: "TCS", students: 209 },
-    { company: "Accenture", students: 214 },
-  ];
-
+const TopCompaniesStats = ({ chartData }) => {
   const chartConfig = {
     students: {
       label: "Placed Students",
@@ -24,7 +15,7 @@ const TopCompaniesStats = () => {
   };
   return (
     <>
-      <Card className="shadow-md w-full lg:col-span-4">
+      <Card className="shadow-md w-full lg:col-span-1 min-h-fit max-h-full">
         <CardContent className="flex flex-col gap-5">
           <CardHeader className="px-3 flex flex-row justify-between gap-5">
             <CardTitle className="text-lg">Top Companies</CardTitle>

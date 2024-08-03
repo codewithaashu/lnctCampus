@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useMemo, useState } from "react";
 import {
   ChartContainer,
   ChartTooltip,
@@ -8,23 +8,23 @@ import { Label, Pie, PieChart } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import SelectComponent from "@/shareable/SelectComponent";
 import { Programs } from "@/db/programs";
-import { colors, placementStats } from "@/db/placementStats";
+import { colors } from "@/db/placementStats";
 
-const PlacedStudentStats = () => {
-  const chartData = Object.keys(placementStats[0]).map((curr, index) => {
+const PlacedStudentStats = ({ placedStats }) => {
+  const chartData = Object.keys(placedStats[0]).map((curr, index) => {
     return {
       program: curr,
-      students: placementStats[0][curr],
+      students: placedStats[0][curr],
       fill: colors[index],
       label: curr,
     };
   });
   var chartConfig = {};
-  Object.keys(placementStats[0]).map((curr, index) => {
+  Object.keys(placedStats[0]).map((curr, index) => {
     const obj = { label: curr };
     chartConfig[curr] = obj;
   });
-  const totalVisitors = React.useMemo(() => {
+  const totalVisitors = useMemo(() => {
     return chartData.reduce((acc, curr) => acc + curr.students, 0);
   }, []);
   const [form, setForm] = useState({ course: "" });

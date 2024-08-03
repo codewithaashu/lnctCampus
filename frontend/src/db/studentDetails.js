@@ -125,4 +125,21 @@ export const studentDetails = {
     "MongoDB",
     "React Native",
   ],
+  certificate: [
+    {
+      title: "10thCertificate",
+      value:
+        "https://drive.google.com/file/d/1qjLlzgIiZM-p4HQFxh-2lVmUH5nfbdXb/view?usp=sharing",
+    },
+    {
+      title: "12thCertificate",
+      value:
+        "https://drive.google.com/file/d/1qjLlzgIiZM-p4HQFxh-2lVmUH5nfbdXb/view?usp=sharing",
+    },
+    {
+      title: "GraduationCertificate",
+      value:
+        "https://drive.google.com/file/d/1qjLlzgIiZM-p4HQFxh-2lVmUH5nfbdXb/view?usp=sharing",
+    },
+  ],
 };

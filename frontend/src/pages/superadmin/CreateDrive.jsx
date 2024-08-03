@@ -3,7 +3,6 @@ import JobDetailsForm from "@/components/dashboard/superadmin/JobDetailsForm";
 import PreviewForm from "@/components/dashboard/superadmin/PreviewForm";
 import Track from "@/components/dashboard/superadmin/Track";
 import { Card, CardContent } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import React, { useState } from "react";
 
 const CreateDrive = () => {

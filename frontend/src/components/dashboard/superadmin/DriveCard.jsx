@@ -45,7 +45,10 @@ const DriveCard = () => {
             </Badge>
             <DropdownMenu className="w-fit ">
               <DropdownMenuTrigger>
-                <Button variant="ghost" className="h-8 px-3">
+                <Button
+                  variant="ghost"
+                  className="h-8 px-3 focus-visible:ring-0 focus-visible:ring-transparent"
+                >
                   <EllipsisVertical className="w-4 h-4" />
                 </Button>
               </DropdownMenuTrigger>
