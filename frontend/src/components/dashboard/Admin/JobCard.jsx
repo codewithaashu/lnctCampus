@@ -1,16 +1,35 @@
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { BadgeIndianRupee, MapPin, ShieldCheck } from "lucide-react";
-import React from "react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import AlertDialogComponent from "@/shareable/AlertDialogComponent";
+import {
+  BadgeIndianRupee,
+  Ellipsis,
+  Eye,
+  MapPin,
+  ShieldCheck,
+} from "lucide-react";
+import React, { useState } from "react";
+import DriveEditDialog from "../superadmin/DriveEditDialog";
+import JobEditDialog from "./JobEditDialog";
 
 const JobCard = () => {
+  const [openEditDialog, setOpenEditDialog] = useState(false);
+  const [openDeleteAlert, setOpenDeleteAlert] = useState(false);
+  const deleteDrive = () => {};
   return (
     <>
       <Card className=" w-full cursor-pointer hover:border-primary border-2">
         <a href="https://www.linkedin.com/jobs/view/3860132638" target="_blank">
-          <CardContent className="py-4">
-            <div className="flex justify-between items-center">
-              <div className="flex flex-row gap-5 items-center border-b pb-3">
+          <CardContent className="pt-4 pb-0">
+            <div className="flex justify-between items-center border-b">
+              <div className="flex flex-row gap-5 items-center  pb-3">
                 <img
                   src="https://media.licdn.com/dms/image/C4E0BAQErzXWSFkn9tQ/company-logo_100_100/0/1663664110809/cgi_logo?e=1726099200&v=beta&t=qHLQIGhITuqESsPtC55uz6RH3tivCEDfxyRDRVJ6Wz8"
                   alt="Company Logo"
@@ -30,7 +49,7 @@ const JobCard = () => {
               </div>
               <ShieldCheck className="w-5 h-5 text-primary" />
             </div>
-            <div className="flex flex-col gap-4 py-3">
+            <div className="flex flex-col gap-4 py-3 border-b">
               <div className="flex flex-col gap-[6px]">
                 <div className="flex flex-row gap-2 items-center">
                   <MapPin className="text-sm text-muted-foreground w-[14px] h-[14px]" />
@@ -69,7 +88,56 @@ const JobCard = () => {
             </div>
           </CardContent>
         </a>
+        <div className="flex justify-between py-3 px-4">
+          <div className="flex gap-1 items-center">
+            <Eye className="w-4 h-4" />
+            <p className="text-xs font-normal text-muted-foreground">
+              300 Impressions
+            </p>
+          </div>
+          <DropdownMenu className="w-fit">
+            <DropdownMenuTrigger>
+              <Button
+                variant="ghost"
+                className="h-8 px-3 focus-visible:ring-0 focus-visible:ring-transparent"
+              >
+                <Ellipsis className="cursor-pointer w-4 h-4" />
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end" side="top" className="w-fit">
+              <DropdownMenuItem onClick={() => setOpenEditDialog(true)}>
+                Edit
+              </DropdownMenuItem>
+              <DropdownMenuItem onClick={() => setOpenDeleteAlert(true)}>
+                Delete
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
+        </div>
       </Card>
+      {/* Dialog and alert component */}
+      <JobEditDialog
+        open={openEditDialog}
+        setOpen={setOpenEditDialog}
+        form={{
+          jobProfile: "",
+          profileCategory: "",
+          jobCategory: "",
+          package: "",
+          jobType: "",
+          applyURL: "",
+          jobLocations: [],
+          skills: [],
+          jobDescription: "",
+        }}
+      />
+      <AlertDialogComponent
+        open={openDeleteAlert}
+        setOpen={setOpenDeleteAlert}
+        title={"Are you absolutely sure?"}
+        description={`This action cannot be undone. This will permanently delete the job.`}
+        handleContinue={deleteDrive}
+      />
     </>
   );
 };

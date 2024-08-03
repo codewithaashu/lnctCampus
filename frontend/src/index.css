@@ -91,6 +91,42 @@ input[type="number"] {
   }
 }
 
+/* Scrollbar css */
+.scrollbar {
+  padding-right: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--muted)) hsl(var(--background));
+  scroll-behavior: smooth;
+}
+
+/* Rich text Editor CSS */
+
+.rsw-editor {
+  border-color: hsl(var(--input)) !important;
+}
+.rsw-toolbar {
+  background: hsl(var(--background)) !important;
+  color: hsl(var(--card-foreground)) !important;
+  border-color: hsl(var(--input)) !important;
+}
+.rsw-separator {
+  border-color: hsl(var(--input)) !important;
+}
+.rsw-btn {
+  color: hsl(var(--card-foreground)) !important;
+}
+.rsw-btn:hover {
+  background: hsl(var(--muted)) !important;
+}
+.rsw-btn[data-active="true"] {
+  background: hsl(var(--secondary) / 80) !important;
+  color: hsl(var(--muted-foreground)) !important;
+}
+.rsw-ce:focus {
+  border: none !important;
+  outline: none !important;
+}
+
 @layer base {
   * {
     @apply border-border;

@@ -54,7 +54,7 @@ const PostListBox = () => {
             style={{ height: window.innerHeight - 300 + "px" }}
           >
             <div
-              className={`h-full w-full  overflow-y-auto flex flex-col gap-3 no-scrollbar`}
+              className={`h-full w-full overflow-y-auto flex flex-col gap-3 scrollbar`}
             >
               <PostCard />
               <PostCard />

@@ -31,7 +31,7 @@ const Track = ({ formStage }) => {
               className={`aspect-square w-7 h-7 flex items-center justify-center rounded-full ${
                 formStage >= 2
                   ? "bg-primary font-semibold"
-                  : "bg-[#E5D7FC] font-medium"
+                  : "bg-muted-foreground font-medium"
               }  text-white object-center text-sm `}
             >
               <h1>2</h1>
@@ -58,7 +58,7 @@ const Track = ({ formStage }) => {
               className={`aspect-square w-7 h-7 flex items-center justify-center rounded-full ${
                 formStage >= 3
                   ? "bg-primary font-semibold"
-                  : "bg-[#E5D7FC] font-medium"
+                  : "bg-muted-foreground font-medium"
               }  text-white object-center text-sm`}
             >
               <h1>3</h1>

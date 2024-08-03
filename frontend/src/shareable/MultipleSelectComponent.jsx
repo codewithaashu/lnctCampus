@@ -25,6 +25,7 @@ const MultipleSelectComponent = ({
   field,
   form,
   setForm,
+  isDialog = false,
 }) => {
   const [open, setOpen] = useState(false);
   const removeItem = (value) => {
@@ -59,7 +60,10 @@ const MultipleSelectComponent = ({
             <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className=" p-0" style={{ width: popoverWidth + "px" }}>
+        <PopoverContent
+          className=" p-0"
+          style={{ width: isDialog ? "680px" : popoverWidth + "px" }}
+        >
           <Command>
             <CommandInput placeholder="Search course..." />
             <CommandEmpty>{emptyPlaceholder}</CommandEmpty>
