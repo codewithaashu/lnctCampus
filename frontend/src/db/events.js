@@ -19,8 +19,4 @@ export const events = [
     title: "Amazon Placement Drive",
     date: "05 August 2024",
   },
-  {
-    title: "Amazon Placement Drive",
-    date: "05 August 2024",
-  },
 ];

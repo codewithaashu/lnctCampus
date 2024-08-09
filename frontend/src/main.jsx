@@ -26,6 +26,12 @@ import { superAdminMenus } from "./db/superAdminMenus";
 import { adminMenus } from "./db/adminMenus";
 import Student from "./pages/admin/Student";
 import StudentPage from "./pages/admin/StudentPage";
+import Events from "./pages/coordinators/Events";
+import { coordinatorMenus } from "./db/coordinatorMenus";
+import CreateUpdateEvent from "./components/dashboard/coordinators/CreateUpdateEvent";
+import EventPage from "./pages/coordinators/EventPage";
+import EventResponses from "./components/dashboard/coordinators/EventResponses";
+import CoordinatorDashboard from "./pages/coordinators/CoordinatorDashboard";
 
 //super-admin routes
 const superAdminRoutes = [
@@ -127,7 +133,57 @@ const adminRoutes = [
   },
 ];
 
-const userType = "superAdmin";
+//coordinator route
+const coordinatorRoutes = [
+  {
+    path: "/",
+    element: <CoordinatorDashboard />,
+  },
+  {
+    path: "/jobs",
+    element: <Jobs />,
+  },
+  {
+    path: "/create-job",
+    element: <CreateJobs />,
+  },
+  {
+    path: "/posts",
+    element: <Posts />,
+  },
+  {
+    path: "/create-post",
+    element: <CreateAdminPost />,
+  },
+  {
+    path: "/events",
+    element: <EventPage />,
+    children: [
+      {
+        path: "/events",
+        element: <Events />,
+      },
+      {
+        path: "/events/event",
+        element: <CreateUpdateEvent />,
+      },
+      {
+        path: "/events/response",
+        element: <EventResponses />,
+      },
+    ],
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
+  },
+  {
+    path: "/change-password",
+    element: <ChangePassword />,
+  },
+];
+
+const userType = "coordinator";
 
 //function for fetch routes according to user type
 const getUserType = () => {
@@ -136,6 +192,7 @@ const getUserType = () => {
   } else if (userType === "admin") {
     return adminRoutes;
   }
+  return coordinatorRoutes;
 };
 
 //function for fetch sidebar menus according to user type
@@ -145,6 +202,7 @@ const getMenu = () => {
   } else if (userType === "admin") {
     return adminMenus;
   }
+  return coordinatorMenus;
 };
 
 const router = createBrowserRouter([
