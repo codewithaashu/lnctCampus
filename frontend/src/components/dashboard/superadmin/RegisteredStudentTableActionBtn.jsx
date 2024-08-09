@@ -8,7 +8,9 @@ import {
 import AlertDialogComponent from "@/shareable/AlertDialogComponent";
 import DialogWithSelect from "@/shareable/DialogWithSelect";
 import { ErrorToast } from "@/utils/ErrorToast";
+import exportToExcel from "@/utils/excelToExport";
 import { getSelectedRowArray } from "@/utils/getSelectedRowArray";
+import { Crown, File, GitCompareArrows, Trash2 } from "lucide-react";
 import React, { useState } from "react";
 
 const RegisteredStudentTableActionBtn = ({ table, setRowSelection }) => {
@@ -96,6 +98,22 @@ const RegisteredStudentTableActionBtn = ({ table, setRowSelection }) => {
     setOpenRemoveDialog(false);
   };
 
+  const handleExport = () => {
+    if (table.getFilteredSelectedRowModel().rows.length === 0) {
+      ErrorToast(
+        "Uh oh! Something went wrong.",
+        "Please select row before change status."
+      );
+      return;
+    } else {
+      const selectedRow = getSelectedRowArray(
+        table.getFilteredSelectedRowModel().rows
+      );
+      exportToExcel(selectedRow, "studentsList");
+      setRowSelection({});
+    }
+  };
+
   return (
     <>
       <DropdownMenu>
@@ -106,10 +124,20 @@ const RegisteredStudentTableActionBtn = ({ table, setRowSelection }) => {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuItem onClick={handleChangeStatus}>
-            Change Status
+            <GitCompareArrows className="w-3.5 h-3.5 mr-1 " /> Change Status
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={handleHired}>Hired</DropdownMenuItem>
-          <DropdownMenuItem onClick={handleRemove}>Remove</DropdownMenuItem>
+          <DropdownMenuItem onClick={handleHired}>
+            <Crown className="w-3.5 h-3.5 mr-1 " />
+            Hired
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={handleRemove}>
+            <Trash2 className="w-3.5 h-3.5 mr-1 " />
+            Remove
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={handleExport}>
+            <File className="w-3.5 h-3.5 mr-1 " />
+            Export
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
       <AlertDialogComponent

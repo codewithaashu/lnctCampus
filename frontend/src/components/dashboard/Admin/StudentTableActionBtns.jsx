@@ -7,7 +7,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import AlertDialogComponent from "@/shareable/AlertDialogComponent";
 import { ErrorToast } from "@/utils/ErrorToast";
+import exportToExcel from "@/utils/excelToExport";
 import { getSelectedRowArray } from "@/utils/getSelectedRowArray";
+import { File, LockOpen, ShieldBan, Trash2 } from "lucide-react";
 import React, { useState } from "react";
 
 const StudentTableActionBtns = ({ table, setRowSelection }) => {
@@ -97,6 +99,22 @@ const StudentTableActionBtns = ({ table, setRowSelection }) => {
     setOpenRemoveAlertDialog(false);
   };
 
+  const handleExport = () => {
+    if (table.getFilteredSelectedRowModel().rows.length === 0) {
+      ErrorToast(
+        "Uh oh! Something went wrong.",
+        "Please select row before change status."
+      );
+      return;
+    } else {
+      const selectedRow = getSelectedRowArray(
+        table.getFilteredSelectedRowModel().rows
+      );
+      exportToExcel(selectedRow, "studentsList");
+      setRowSelection({});
+    }
+  };
+
   return (
     <>
       <DropdownMenu>
@@ -107,12 +125,20 @@ const StudentTableActionBtns = ({ table, setRowSelection }) => {
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
           <DropdownMenuItem onClick={handleUnlock}>
-            Unlock Data
+            <LockOpen className="w-3.5 h-3.5 mr-1 " /> Unlock Data
           </DropdownMenuItem>
           <DropdownMenuItem onClick={handleBlacklist}>
+            <ShieldBan className="w-3.5 h-3.5 mr-1 " />
             Blacklist
           </DropdownMenuItem>
-          <DropdownMenuItem onClick={handleRemove}>Remove</DropdownMenuItem>
+          <DropdownMenuItem onClick={handleRemove}>
+            <Trash2 className="w-3.5 h-3.5 mr-1 " />
+            Remove
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={handleExport}>
+            <File className="w-3.5 h-3.5 mr-1 " />
+            Export
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
 

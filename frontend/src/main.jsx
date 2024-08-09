@@ -127,7 +127,7 @@ const adminRoutes = [
   },
 ];
 
-const userType = "admin";
+const userType = "superAdmin";
 
 //function for fetch routes according to user type
 const getUserType = () => {
